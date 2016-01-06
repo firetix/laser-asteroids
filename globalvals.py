@@ -1,7 +1,7 @@
 import math
 
 # ADJUST THE LASER POWER
-LASER_POWER_DENOM = 1.0
+LASER_POWER_DENOM = 0.5
 
 # POSITIONAL BOUNDARIES OF THE GALVOS
 # XXX: Normally set to 28000 each. Changed for presentation. 
@@ -11,7 +11,7 @@ MAX_Y = 17000
 MIN_Y = 0
 
 # MAX COLOR VALUE HARDWARE ALLOWS
-CMAX = 65535
+CMAX = 20000
 
 
 """

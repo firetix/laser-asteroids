@@ -11,13 +11,8 @@ def setup_controls(joystick):
 	"""
 	Joystick wrapper.
 	"""
-	if re.search('playstation', joystick.get_name(), re.I):
-		return Ps3Controller(joystick)
 
-	elif re.search('playstation', joystick.get_name(), re.I):
-		return XboxController(joystick)
-
-	return Controller(joystick)
+	return XboxController(joystick)
 
 class Controller(object):
 
@@ -49,24 +44,25 @@ class XboxController(Controller):
 		super(XboxController, self).__init__(joystick)
 
 	def getLeftHori(self):
-		return self.js.get_axis(0)
+		return self.js.get_axis(2)
 
 	def getLeftVert(self):
 		return self.js.get_axis(1)
 
 	def getRightHori(self):
-		return self.js.get_axis(3)
+		return self.js.get_axis(4)
 
 	def getRightVert(self):
-		return self.js.get_axis(4)
+		return self.js.get_axis(3)
 
 	def getLeftTrigger(self):
 		# TODO: Verify
-		return self.js.get_axis(2)
+		
+		return self.js.get_axis(1)
 
 	def getRightTrigger(self):
 		# TODO: Verify
-		return self.js.get_axis(5)
+		return self.js.get_axis(2)
 
 class Ps3Controller(Controller):
 
